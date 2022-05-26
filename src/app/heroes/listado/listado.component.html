@@ -1,0 +1,21 @@
+<h1>Listado de Heroes</h1>
+
+<ul>
+    <li *ngFor="let heroe of heroes; let i = index">   <!--  *ngFor ciclo for -->
+        {{i+1}} - {{heroe}}
+    </li>
+</ul>
+
+<button (click)="borrarHeroe()">Borrar Heroe</button>
+
+<div *ngIf=" heroeBorrado !== '' ; else noBorrado">   <!-- *ngIF="true" muestra y "false" no muetra, se puede poner una condicion. Tambien tiene un "else" como los if tradicionales -->
+    
+    <h3>Heroe borrado: <small>{{heroeBorrado}}</small></h3>
+
+</div>
+
+<ng-template #noBorrado> <!-- contenedor de codigo html con referencia local, como el id se usa el "#" -->
+    <h3>No a borrado nada.</h3>
+</ng-template>
+
+
